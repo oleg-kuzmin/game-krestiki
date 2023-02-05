@@ -145,6 +145,7 @@
   font-size: 30px;
   line-height: 42px;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 .info-area__button_type_start {
