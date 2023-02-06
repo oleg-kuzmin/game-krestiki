@@ -1,16 +1,13 @@
 const gameAreaField = document.querySelector('.game-area');
-const turnZero = document.querySelector('#turnZero');
-const turnDagger = document.querySelector('#turnDagger');
+const pvpMode = document.querySelector('#pvp');
+const pveMode = document.querySelector('#pve');
 const gameAreaFieldAll = document.querySelectorAll('.game-area__field');
 const gameReset = document.querySelector('.info-area__button_type_reset');
+
 let isDagger = true;
 let arrayDagger = [];
 
 gameAreaField.addEventListener('click', function (evt) {
-  if ((evt.target.classList.contains('game-area__field_krest')) && (evt.target.classList.contains('game-area__field_nolik'))) {
- 
-  }
-
   if ((!evt.target.classList.contains('game-area__field_krest')) && (!evt.target.classList.contains('game-area__field_nolik'))) {
     if (isDagger) {
       evt.target.classList.add('game-area__field_krest');
@@ -26,21 +23,24 @@ gameAreaField.addEventListener('click', function (evt) {
   }
 })
 
-gameReset.addEventListener('click', function () {
+function resetGame() {
   gameAreaFieldAll.forEach(element => {
     element.classList.remove('game-area__field_nolik');
     element.classList.remove('game-area__field_krest');    
   });
   isDagger = true;
   arrayDagger = [];
-})
+  console.log('da');
+}
+
+gameReset.addEventListener('click', resetGame); 
 
 function checkVictory (array) {
   if ((array[0] === true) && (array[1] === true) && (array[2] === true)) {
     return 'Victory Dugger';    
   }   
 
-  if ((array[0] === false) && (array[1] === false) && (array[2]) === false) {
+  if ((array[0] === false) && (array[1] === false) && (array[2] === false)) {
     return 'Victory Zero';
   }
 
@@ -48,7 +48,7 @@ function checkVictory (array) {
     return 'Victory Dugger';  
   }  
 
-  if ((array[3] === false) && (array[4] === false) && (array[5]) === false) {
+  if ((array[3] === false) && (array[4] === false) && (array[5] === false)) {
     return 'Victory Zero';
   }
 
@@ -56,7 +56,7 @@ function checkVictory (array) {
     return 'Victory Dugger'; 
   } 
 
-  if ((array[6] === false) && (array[7] === false) && (array[8]) === false) {
+  if ((array[6] === false) && (array[7] === false) && (array[8] === false)) {
     return 'Victory Zero';
   }
 
@@ -64,7 +64,7 @@ function checkVictory (array) {
     return 'Victory Dugger';     
   } 
 
-  if ((array[0] === false) && (array[3] === false) && (array[6]) === false) {
+  if ((array[0] === false) && (array[3] === false) && (array[6] === false)) {
     return 'Victory Zero';
   }
 
@@ -72,7 +72,7 @@ function checkVictory (array) {
     return 'Victory Dugger';     
   }
 
-  if ((array[1] === false) && (array[4] === false) && (array[7]) === false) {
+  if ((array[1] === false) && (array[4] === false) && (array[7] === false)) {
     return 'Victory Zero';
   }
   
@@ -80,7 +80,7 @@ function checkVictory (array) {
     return 'Victory Dugger';     
   } 
 
-  if ((array[2] === false) && (array[5] === false) && (array[8]) === false) {
+  if ((array[2] === false) && (array[5] === false) && (array[8] === false)) {
     return 'Victory Zero';
   }
 
@@ -88,7 +88,7 @@ function checkVictory (array) {
     return 'Victory Dugger';     
   } 
 
-  if ((array[0] === false) && (array[4] === false) && (array[8]) === false) {
+  if ((array[0] === false) && (array[4] === false) && (array[8] === false)) {
     return 'Victory Zero';
   }
 
@@ -96,14 +96,13 @@ function checkVictory (array) {
     return 'Victory Dugger';     
   } 
 
-  if ((array[2] === false) && (array[4] === false) && (array[6]) === false) {
+  if ((array[2] === false) && (array[4] === false) && (array[6] === false)) {
     return 'Victory Zero';
   }
 
   if ((!array.includes(undefined)) && array.length === 9) {
     return 'DRAW'
-  }
-
+  }  
 }
 
 
