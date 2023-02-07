@@ -22,14 +22,15 @@
 }
 
 .game-area {
-  width: 600px;
-  height: 600px;
+  /* width: 600px; */
+  /* height: 600px; */
   background-color: #3AE269;
   margin-left: 86px;
   border-radius: 15px;
   display: grid;
   grid-template-columns: repeat(3, minmax(min-content, max-content));
-  grid-template-rows: 3fr;
+  grid-template-rows: repeat(3, minmax(min-content, max-content));
+  box-sizing: border-box;
   border: 2px solid #FFFFFF;
 }
 
@@ -37,13 +38,13 @@
   width: 200px;
   height: 200px;
   position: relative;
-  transition: opacity .3s;
   transition: background-color .3s;
+  border-radius: 15px;
+  box-sizing: border-box;
 }
 
 .game-area__field:hover {
-  opacity: .8;
-  background-color: rgba(102, 141, 113, 0.438);
+  background-color: rgba(0, 0, 0, 0.4);
   cursor: pointer;
 }
 
@@ -78,22 +79,19 @@
 }
 .game-area__field:nth-of-type(5) {
   border-bottom: 2px solid black;
-  border-right: 2px solid black;  
+  border-right: 2px solid black;
 }
 .game-area__field:nth-of-type(6) {
   border-bottom: 2px solid black;
-  
 }
 .game-area__field:nth-of-type(7) {
-  border-bottom: 2px solid black;
-  border-right: 2px solid black;  
+  border-right: 2px solid black;
 }
 .game-area__field:nth-of-type(8) {
-  border-bottom: 2px solid black;
   border-right: 2px solid black;
 }
 .game-area__field:nth-of-type(9) {
-  border-bottom: 2px solid black;  
+
 }
 
 .info-area {
@@ -133,7 +131,7 @@
   text-align: center;
   color: red;
 }
-.info-area__mode { 
+.info-area__mode {
   width: 275px;
   height: 72px;
   background: #FFFFFF;
@@ -143,7 +141,7 @@
   text-align: center;
   margin-bottom: 10px;
   margin-left: 42px;
-  margin-top: 50px;  
+  margin-top: 50px;
 }
 
 .info-area__mode:last-of-type {
@@ -154,7 +152,7 @@
   opacity: 0.5;
 }
 
-.info-area__button {  
+.info-area__button {
   border: 2px solid #FFFFFF;
   border-radius: 10px;
   font-size: 30px;
