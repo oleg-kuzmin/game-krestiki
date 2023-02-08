@@ -22,8 +22,6 @@
 }
 
 .game-area {
-  /* width: 600px; */
-  /* height: 600px; */
   background-color: #3AE269;
   margin-left: 86px;
   border-radius: 15px;
@@ -32,6 +30,30 @@
   grid-template-rows: repeat(3, minmax(min-content, max-content));
   box-sizing: border-box;
   border: 2px solid #FFFFFF;
+  transition: opacity 2s;
+  position: relative;
+}
+
+.game-area__result {
+  color: white;
+  position: absolute;
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: 68px;
+  font-weight: 400;
+  line-height: 58px;
+  margin: 0;
+  z-index: 1;
+  justify-self: center;
+  align-self: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility .3s, opacity .3s linear;
+}
+
+.game-area_victory {
+  visibility: visible;
+  opacity: 1;
 }
 
 .game-area__field {
